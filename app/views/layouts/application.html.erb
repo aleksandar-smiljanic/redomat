@@ -1,14 +1,29 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Redomat</title>
+  <title>Pragprog Book Online Store</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body class='<%= controller.controller_name %>'>
-
-<%= yield %>
+    <div id="banner">
+      <%= image_tag("logo.png") %>
+      <%= @page_title || "Pragmatic Bookshelf" %>
+    </div>
+    <div id="columns">
+      <div id="side">
+        <ul>
+          <li><a href="http://localhost:3000">Home</a></li>
+          <li><a href="http://localhost:3000/questions">Questions</a></li>
+          <li><a href="http://localhost:3000/news">News</a></li>
+          <li><a href="http://localhost:3000/contact">Contact</a></li>
+        </ul>
+      </div>
+        <div id='main'>
+            <%= yield %>
+        </div>
+    </div>
 
 </body>
 </html>
