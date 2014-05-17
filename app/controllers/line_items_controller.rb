@@ -65,7 +65,7 @@ class LineItemsController < ApplicationController
 
     respond_to do |format|
       if @line_item.cart and @line_item.cart.line_items.size > 0
-        format.html { redirect_to @line_item.cart, notice: "Removed #{titel} from cart" }
+        format.html { redirect_to @line_item.cart, notice: "Removed #{title} from cart" }
         format.json { head :no_content }
       else
         format.html { redirect_to store_url, notice: "Removed #{title} from cart. Your Cart is empty." }
